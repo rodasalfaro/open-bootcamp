@@ -4,28 +4,36 @@ os.system('clear')
 
 
 
-class Vehiculo:
-    color= "blanco"
-    noruedas= 4
-    nopuertas= 5
+class Vehiculo():
+    #inicializamos los atributos
+    def __init__(self, color, noruedas, nopuertas):
+
+        self.color= color
+        self.noruedas= noruedas
+        self.nopuertas= nopuertas
     
-    
+    def __str__(self):
+        return "Color del auto: {}, No. de ruedas: {}, No. de puertas {}".format(self.color, self.noruedas, self.nopuertas)
     
 
 class Coche(Vehiculo):
-    velocidad = 60
-    cilindrada = "2000cc"
+    
+    def __init__(self, color, noruedas, nopuertas, velocidad, cilindrada):
+        self.color = color
+        self.noruedas = noruedas
+        self.nopuertas = nopuertas
+        self.velocidad = velocidad
+        self.cilindrada = cilindrada
+    
+    def __str__(self):
+        return "Color del auto :{}\nNo. de ruedas :{}\nNo. de puertas :{}\nVelocidad :{}km/h\nCilindrada :{}cc".format(self.color, self.noruedas, self.nopuertas, self.velocidad, self.cilindrada)
+    
 
 
-primerauto = Coche()
+primerauto = Coche("azul", 4, 4, 160, 2000)
 
+print(primerauto)
 
-
-print('Color del auto:',primerauto.color,
-      '\nNo. puertas:', primerauto.nopuertas,
-      '\nNo. de ruedas:', primerauto.noruedas,
-      '\nCilindrada:', primerauto.cilindrada,
-      '\nVelocidad :', primerauto.velocidad, 'km/h')
 
     
     

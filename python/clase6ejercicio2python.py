@@ -4,28 +4,35 @@ os.system('clear')
 
 
 
-class Vehiculo:
-    color= "blanco"
-    noruedas= 4
-    nopuertas= 5
+class Alumno():
+    
+    def crear(self, nombrealumno, notaalumno):
+        self.nombrealumno = nombrealumno
+        self.notaalumno = notaalumno
+        
+    def imprime(self):
+        print("Nombre del alumno :", self.nombrealumno)
+        print("Nota obtenida :", self.notaalumno)
+            
+    def statusalumno(self):
+        if self.notaalumno<6:
+            print("Alumno reprobado\n")
+        else:
+            print("Alumno Aprobado\n")
     
     
     
+primeralumno = Alumno()
+segundoalumno = Alumno()
+terceralumno = Alumno()
 
-class Coche(Vehiculo):
-    velocidad = 60
-    cilindrada = "2000cc"
+primeralumno.crear("Jose Alberto Perez",8)
+segundoalumno.crear("Yoana Azucena Valdez",9)
+terceralumno.crear("Joaquin Alvarado",4)
 
-
-primerauto = Coche()
-
-
-
-print('Color del auto:',primerauto.color,
-      '\nNo. puertas:', primerauto.nopuertas,
-      '\nNo. de ruedas:', primerauto.noruedas,
-      '\nCilindrada:', primerauto.cilindrada,
-      '\nVelocidad :', primerauto.velocidad, 'km/h')
-
-    
-    
+primeralumno.imprime()
+primeralumno.statusalumno()
+segundoalumno.imprime()
+segundoalumno.statusalumno()
+terceralumno.imprime()
+terceralumno.statusalumno()
